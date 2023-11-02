@@ -21,13 +21,17 @@ public class Acceso {
 	
 	@Column(name="codigo_acceso", nullable=false)
 	private String codigo_acceso;
-	
+
 	@Column(name="descripcion_acceso")
 	private String descripcion_acceso;
 	
     @OneToMany(mappedBy="acceso")
     List<Usuario> usuariosConAcceso;     
 
+    //GETT
+    public String getCodigo_acceso() {
+		return codigo_acceso;
+	}
 	//CONSTRUCTORES
 	public Acceso() {
 		super();

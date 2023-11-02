@@ -63,18 +63,21 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name="id_acceso")
     Acceso acceso;
-	
+   
+    //GETT
+    public String getDniUsuario() {
+		return dniUsuario;
+	}
 	//CONSTRUCTORES
 
 	public Usuario() {
 		super();
 	}
 
-	public Usuario(long idUsuario, String dniUsuario, String nombreUsuario, String apellidosUsuario, String tlfUsuario,
+	public Usuario(String dniUsuario, String nombreUsuario, String apellidosUsuario, String tlfUsuario,
 			String emailUsuario, String claveUsuario, boolean estaBloqueadoUsuario, Calendar fchFinBloqueo,
 			Calendar fchAltaUsuario, Calendar fchBajaUsuario, Acceso acceso) {
 		super();
-		this.idUsuario = idUsuario;
 		this.dniUsuario = dniUsuario;
 		this.nombreUsuario = nombreUsuario;
 		this.apellidosUsuario = apellidosUsuario;
@@ -86,6 +89,13 @@ public class Usuario {
 		this.fchAltaUsuario = fchAltaUsuario;
 		this.fchBajaUsuario = fchBajaUsuario;
 		this.acceso = acceso;
-	}	
+	}
+	public Usuario( String dniUsuario, String nombreUsuario, String apellidosUsuario, Acceso acceso) {
+		super();
+		this.dniUsuario = dniUsuario;
+		this.nombreUsuario = nombreUsuario;
+		this.apellidosUsuario = apellidosUsuario;
+		this.acceso = acceso;
+	}
 	
 }

@@ -17,7 +17,7 @@
         <exclude-unlisted-classes/>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ip:puerto/basedatos"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://ip:puerto/bd"/>
             <property name="jakarta.persistence.jdbc.user" value="usu"/>
             <property name="jakarta.persistence.jdbc.password" value="contra"/>
             <property name="jakarta.persistence.schema-generation.database.action" value="create"/>

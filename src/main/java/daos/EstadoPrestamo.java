@@ -22,7 +22,6 @@ public class EstadoPrestamo {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_estado_prestamo", nullable=false)
 	private long id_estado_prestamo;
-	
 
 	@Column(name="fch_inicio_prestamo")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -39,14 +38,18 @@ public class EstadoPrestamo {
 	@OneToMany(mappedBy="estadoPresta")
 	List<Prestamo> PrestamoEstado;
 	
+	//GET
+	public Calendar getFchEntrePresta() {
+		return fchEntrePresta;
+	}
+	
 	//CONSTRUCTORES
 		public EstadoPrestamo() {
 			super();
 		}
-		public EstadoPrestamo(long id_estado_prestamo, Calendar fchIniPresta, Calendar fchFinPresta,
+		public EstadoPrestamo(Calendar fchIniPresta, Calendar fchFinPresta,
 				Calendar fchEntrePresta, List<Prestamo> prestamoEstado) {
 			super();
-			this.id_estado_prestamo = id_estado_prestamo;
 			this.fchIniPresta = fchIniPresta;
 			this.fchFinPresta = fchFinPresta;
 			this.fchEntrePresta = fchEntrePresta;

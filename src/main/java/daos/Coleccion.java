@@ -24,17 +24,21 @@ public class Coleccion {
 	@Column(name="nombre_coleccion", nullable=false)
 	private String nombre_coleccion;
 	
+	
+
 	@OneToMany(mappedBy="coleccion")
     List<Libro> librosConColeccion; 
-	
+	//GET
+	public String getNombre_coleccion() {
+		return nombre_coleccion;
+	}
 	//CONSTRUCTORES
 	public Coleccion() {
 		super();
 	}
 	
-	public Coleccion(long id_coleccion, String nombre_coleccion) {
+	public Coleccion(String nombre_coleccion) {
 		super();
-		this.id_coleccion = id_coleccion;
 		this.nombre_coleccion = nombre_coleccion;
 	}
 	

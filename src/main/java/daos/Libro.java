@@ -29,6 +29,7 @@ public class Libro {
 	@Column(name="isbn_libro", nullable=false)
 	private String isbnLibro;
 	
+	
 	@Column(name="titulo_libro")
 	private String tituloLibro;
 	
@@ -66,15 +67,17 @@ public class Libro {
 	    )
 	    private List<Autor> libroAutor;
 	   
-	
+	//GET
+	public String getIsbnLibro() {
+		return isbnLibro;
+	}
 	//CONSTRUCTORES
 	public Libro() {
 		super();
 	}
-	public Libro(long idLibro, String isbnLibro, String tituloLibro, String edicionLibro, Editorial editorial,
-			Genero genero, Coleccion coleccion,int cantidadLibro) {
+	public Libro(String isbnLibro, String tituloLibro, String edicionLibro, Editorial editorial,
+			Genero genero, Coleccion coleccion,int cantidadLibro,List<Autor> libroAutor) {
 		super();
-		this.idLibro = idLibro;
 		this.isbnLibro = isbnLibro;
 		this.tituloLibro = tituloLibro;
 		this.edicionLibro = edicionLibro;
@@ -82,12 +85,9 @@ public class Libro {
 		this.genero = genero;
 		this.coleccion = coleccion;
 		this.cantidadLibro=cantidadLibro;
+		this.libroAutor=libroAutor;
 	}
-	public Libro(String isbnLibro) {
-		super();
-		this.isbnLibro = isbnLibro;
-		
-	}
+	
 	
 
 }

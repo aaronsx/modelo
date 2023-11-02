@@ -24,17 +24,22 @@ public class Editorial {
 	@Column(name="nombre_editorial", nullable=false)
 	private String nombre_editorial;
 	 
-	 @OneToMany(mappedBy="editorial")
-	    List<Libro> librosConEditorial;
+	 
 
+	@OneToMany(mappedBy="editorial")
+	    List<Libro> librosConEditorial;
+	 //GET
+	public String getNombre_editorial() {
+		return nombre_editorial;
+	}
+	 
 	//CONSTRUCTORES
 	public Editorial() {
 		super();
 	}
 
-	public Editorial(long id_editorial, String nombre_editorial) {
+	public Editorial(String nombre_editorial) {
 		super();
-		this.id_editorial = id_editorial;
 		this.nombre_editorial = nombre_editorial;
 	}
 

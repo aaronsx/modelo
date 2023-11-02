@@ -28,12 +28,19 @@ public class Genero {
 	 
 	@OneToMany(mappedBy="genero")
     List<Libro> librosConGenero;
-	
+	//GET
+	public String getNombre_genero() {
+		return nombre_genero;
+	}
 	//CONSTRUCTORES
 	public Genero() {
 		super();
 	}
-
+	public Genero(String nombre_genero, String descripcion_genero) {
+		super();
+		this.nombre_genero = nombre_genero;
+		this.descripcion_genero = descripcion_genero;
+	}
 	
 
 }

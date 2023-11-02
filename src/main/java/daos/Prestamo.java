@@ -57,19 +57,23 @@ public class Prestamo {
         inverseJoinColumns = @JoinColumn(name = "id_libro",referencedColumnName="id_libro")
     )
     private List<Libro> prestamoLibro;
-	
+	//GET
+	public Calendar getFchIniPresta() {
+		return fchIniPresta;
+	}
 	//CONSTRUCTORES
 	public Prestamo() {
 		super();
 	}
 	public Prestamo(long id_prestamo, Calendar fchIniPresta, Calendar fchFinPresta, Calendar fchEntrePresta,
-			EstadoPrestamo estadoPresta) {
+			EstadoPrestamo estadoPresta,List<Libro> prestamoLibro) {
 		super();
 		this.id_prestamo = id_prestamo;
 		this.fchIniPresta = fchIniPresta;
 		this.fchFinPresta = fchFinPresta;
 		this.fchEntrePresta = fchEntrePresta;
 		this.estadoPresta = estadoPresta;
+		this.prestamoLibro=prestamoLibro;
 	}
 	
 	

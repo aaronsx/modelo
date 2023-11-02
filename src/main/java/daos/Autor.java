@@ -31,7 +31,10 @@ public class Autor {
 	@ManyToMany(mappedBy = "libroAutor")
 	 private List<Libro> libros;
 
-	
+	//GET
+	public String getNombreAutor() {
+		return nombreAutor;
+	}
 	//CONSTRUCTORES
 	public Autor() {
 		super();
